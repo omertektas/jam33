@@ -58,8 +58,8 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.2.11f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\deneme.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\characterControl.cs" />
+    <Compile Include="Assets\Scripts\cameraControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
