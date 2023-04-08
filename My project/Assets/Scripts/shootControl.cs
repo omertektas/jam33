@@ -7,7 +7,9 @@ public class shootControl : MonoBehaviour
 {
     public Camera cam;
     public LayerMask enemy;
-    
+    public Transform namlu;
+    public GameObject bulletPrefab;
+    public float bulletSpeed = 10;
 
     void Start()
     {
@@ -19,8 +21,11 @@ public class shootControl : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            var bullet = Instantiate(bulletPrefab, namlu.position, namlu.rotation);
+            bullet.GetComponent<Rigidbody>().velocity = namlu.forward * bulletSpeed;
             shootFunction();
         }
+       
     }
     private void shootFunction()
     {
@@ -31,10 +36,10 @@ public class shootControl : MonoBehaviour
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, enemy))
             {
                 Debug.Log("Ateþ edildi");
+           
 
-                
-            }
-            
-        
+        }
+
+      
     }
 }

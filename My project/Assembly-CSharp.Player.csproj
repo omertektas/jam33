@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\characterControl.cs" />
+    <Compile Include="Assets\Scripts\shootControl.cs" />
     <Compile Include="Assets\Scripts\cameraControl.cs" />
   </ItemGroup>
   <ItemGroup>
