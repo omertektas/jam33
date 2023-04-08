@@ -13,17 +13,17 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: KVRC_LP_Material _67_BaseColor
-    second: {fileID: 2800000, guid: fc074baaca8e6c74394bf9e5738a4668, type: 3}
+    second: {fileID: 2800000, guid: 748dc6b9c1b668c40a864ff1ddd94a09, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: KVRC_LP_Material _67_Emissive
-    second: {fileID: 2800000, guid: 9bd31ac184354f44fab68f64603d16ad, type: 3}
+    second: {fileID: 2800000, guid: ff8558d3b69513b45bd94efb92b06b8d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: KVRC_LP_Material _67_Roughness
-    second: {fileID: 2800000, guid: ccacc6283b566424d83da91465da41f0, type: 3}
+    second: {fileID: 2800000, guid: eead823392a86244fb1eff991fb75237, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
