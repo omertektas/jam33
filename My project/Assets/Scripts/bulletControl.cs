@@ -7,7 +7,7 @@ public class bulletControl : MonoBehaviour
     [SerializeField] private static int health;
     void Start()
     {
-        
+        Destroy(gameObject,2f);
     }
 
     // Update is called once per frame
@@ -21,6 +21,7 @@ public class bulletControl : MonoBehaviour
         {
             health -= 10;
             Debug.Log(health);
+            Destroy(gameObject);
         }
     }
 }

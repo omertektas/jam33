@@ -8,10 +8,12 @@ public class characterControl : MonoBehaviour
     [SerializeField] private float jumpSpeed;
     Rigidbody rb;
     bool isGrounded;
+    Animator anim;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         isGrounded = false;
+        anim = GetComponent<Animator>();
     }
 
     
@@ -21,11 +23,7 @@ public class characterControl : MonoBehaviour
         moveFunc();
     }
 
-    void FixedUpdate()
-    {
-       
-       
-    }
+    
 
     private void moveFunc()
     {
@@ -46,8 +44,6 @@ public class characterControl : MonoBehaviour
         }
        
         
-
-        
         
     }
     private void OnCollisionEnter(Collision collision)
@@ -59,6 +55,19 @@ public class characterControl : MonoBehaviour
         
 
 
+    }
+
+    private void animationController()
+    {
+        //if (rb.velocity.x>0 || rb.velocity.z>0)
+        //{
+        //    anim.SetBool("walk", true);
+        //}
+        //else
+        //{
+        //    anim.SetBool("walk", false);
+
+        //}
     }
 
 

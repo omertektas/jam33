@@ -27,6 +27,9 @@ public class shootControl : MonoBehaviour
             
            
             shootFunction();
+           
+           
+            
         }
        
     }
@@ -34,13 +37,15 @@ public class shootControl : MonoBehaviour
     {
         
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));//ekranýn ortasý
+        
 
-            RaycastHit hit;
+        RaycastHit hit;
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, enemy))
             {
                 
                 var bullet = Instantiate(bulletPrefab, namlu.position, namlu.rotation);
                 bullet.GetComponent<Rigidbody>().velocity = -(namlu.position-hit.point).normalized * bulletSpeed;
+                 
 
             }
 
@@ -50,8 +55,13 @@ public class shootControl : MonoBehaviour
             bullet.GetComponent<Rigidbody>().velocity = ray.direction * bulletSpeed;
             }
 
-      
+        
+        
+        
     }
+
+
+    
 
    
 }
