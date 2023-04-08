@@ -19,13 +19,13 @@ public class cameraControl : MonoBehaviour
         this.transform.position = Vector3.Lerp(this.transform.position, target.position+offset, Time.deltaTime);
         mouseX += Input.GetAxis("Mouse X") * sensitivity;
         mouseY += Input.GetAxis("Mouse Y") * sensitivity;
-        if (mouseY>=25)
+        if (mouseY>=50)
         {
-            mouseY = 25;
+            mouseY = 50;
         }
-        if (mouseY < -40)
+        if (mouseY < -80)
         {
-            mouseY = -40;
+            mouseY = -80;
 
         }
         this.transform.eulerAngles=new Vector3(-mouseY,mouseX,0); 

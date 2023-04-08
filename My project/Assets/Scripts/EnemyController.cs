@@ -26,6 +26,10 @@ public class EnemyController : MonoBehaviour
     }
     void GoPlayer()
     {
-      enemy.SetDestination(player.position);
+        if (Vector3.Distance(player.position, this.gameObject.transform.position) < 30)
+        {
+            enemy.SetDestination(player.position);
+        }
+      
     }
 }

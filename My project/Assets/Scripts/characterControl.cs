@@ -30,6 +30,11 @@ public class characterControl : MonoBehaviour
         float hor = Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
         this.gameObject.transform.Translate(hor*moveSpeed*Time.deltaTime,0,ver*moveSpeed*Time.deltaTime);
+        if (hor != 0 || ver != 0)
+        {
+            anim.SetBool("walk", true);
+        }
+        else anim.SetBool("walk", false);
 
     }
 
@@ -57,18 +62,7 @@ public class characterControl : MonoBehaviour
 
     }
 
-    private void animationController()
-    {
-        //if (rb.velocity.x>0 || rb.velocity.z>0)
-        //{
-        //    anim.SetBool("walk", true);
-        //}
-        //else
-        //{
-        //    anim.SetBool("walk", false);
-
-        //}
-    }
+    
 
 
 

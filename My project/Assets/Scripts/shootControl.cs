@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class shootControl : MonoBehaviour
 {
+    
     public Camera cam;
     public LayerMask enemy;
     public Transform namlu;
