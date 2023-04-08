@@ -10,7 +10,8 @@ public class shootControl : MonoBehaviour
     public Transform namlu;
     public GameObject bulletPrefab;
     public float bulletSpeed = 10;
-
+    Vector3 bulletPosition;
+    
     void Start()
     {
         cam =Camera.main;
@@ -19,10 +20,12 @@ public class shootControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
+       
         if (Input.GetMouseButtonDown(0))
         {
-            var bullet = Instantiate(bulletPrefab, namlu.position, namlu.rotation);
-            bullet.GetComponent<Rigidbody>().velocity = namlu.forward * bulletSpeed;
+            
+           
             shootFunction();
         }
        
@@ -35,11 +38,20 @@ public class shootControl : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, enemy))
             {
-                Debug.Log("Ateþ edildi");
-           
+                
+                var bullet = Instantiate(bulletPrefab, namlu.position, namlu.rotation);
+                bullet.GetComponent<Rigidbody>().velocity = -(namlu.position-hit.point).normalized * bulletSpeed;
 
-        }
+            }
+
+            else
+            {
+            var bullet = Instantiate(bulletPrefab, namlu.position, namlu.rotation);
+            bullet.GetComponent<Rigidbody>().velocity = ray.direction * bulletSpeed;
+            }
 
       
     }
+
+   
 }
