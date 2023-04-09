@@ -19,7 +19,7 @@ public class bulletControl : MonoBehaviour
     {
         if (other.gameObject.tag=="enemy")
         {
-            health -= 10;
+            health -= 20;
             Debug.Log(health);
             
             if (health <= 0)

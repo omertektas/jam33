@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class startGame : MonoBehaviour
 {
-    [SerializeField] private GameObject introPanel,videoPanel,playGamePanel;
+    [SerializeField] private GameObject introPanel,videoPanel,playGamePanel, videoPanel2;
     
     
     void Start()
@@ -24,6 +24,7 @@ public class startGame : MonoBehaviour
         introPanel.SetActive(false);
         videoPanel.SetActive(true);
         StartCoroutine(isStoppedVideo());
+
         
     }
     public void quitGame()
@@ -32,15 +33,21 @@ public class startGame : MonoBehaviour
     }
     public void playGame()
     {
+        videoPanel2.SetActive(true);
+        Invoke("passScene", 8 );
+        
+    }
+    private void passScene()
+    {
         SceneManager.LoadScene(1);
     }
-
 
     IEnumerator isStoppedVideo()
     {
         yield return new WaitForSeconds(14);
         videoPanel.SetActive(false );
         playGamePanel.SetActive(true);
+        
     }
     
 }
