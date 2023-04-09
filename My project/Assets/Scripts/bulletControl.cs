@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class bulletControl : MonoBehaviour
 {
+   
     [SerializeField] private static  int health=100;
+    
     void Start()
     {
+       
         Destroy(gameObject,2f);
     }
 
@@ -19,6 +22,7 @@ public class bulletControl : MonoBehaviour
     {
         if (other.gameObject.tag=="enemy")
         {
+            
             health -= 20;
             Debug.Log(health);
             

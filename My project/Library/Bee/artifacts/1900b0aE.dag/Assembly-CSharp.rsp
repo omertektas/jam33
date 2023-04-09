@@ -365,6 +365,7 @@
 "Assets/Scripts/cameraControl.cs"
 "Assets/Scripts/characterControl.cs"
 "Assets/Scripts/EnemyController.cs"
+"Assets/Scripts/level2.cs"
 "Assets/Scripts/shootControl.cs"
 "Assets/Scripts/startGame.cs"
 -langversion:9.0

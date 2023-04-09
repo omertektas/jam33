@@ -28,11 +28,9 @@ public class EnemyController : MonoBehaviour
         if (Vector3.Distance(player.position, this.gameObject.transform.position) < 30)
         {
             enemy.SetDestination(player.position);
-        }
-        if (Vector3.Distance(player.position, this.gameObject.transform.position) < 8)
-        {
             enemyAudioSource.UnPause();
         }
+       
         else
         {
             enemyAudioSource.Pause();
