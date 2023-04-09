@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\characterControl.cs" />
+    <Compile Include="Assets\Scripts\level2.cs" />
     <Compile Include="Assets\Scripts\startGame.cs" />
     <Compile Include="Assets\Scripts\bulletControl.cs" />
     <Compile Include="Assets\Scripts\shootControl.cs" />
