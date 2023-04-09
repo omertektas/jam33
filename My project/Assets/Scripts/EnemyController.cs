@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
 {
     public Transform player;
     UnityEngine.AI.NavMeshAgent enemy;
+    [SerializeField] private static int health;
     void Start()
     {
         enemy = GetComponent<NavMeshAgent>();
@@ -21,7 +22,8 @@ public class EnemyController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Destroy(other.gameObject);
+            health -= 10;
+            Debug.Log(health);
         }
     }
     void GoPlayer()
