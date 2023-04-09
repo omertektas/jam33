@@ -8,6 +8,8 @@ TagManager:
   - enemy
   - bullet
   - trap
+  - key
+  - lock
   layers:
   - Default
   - TransparentFX
