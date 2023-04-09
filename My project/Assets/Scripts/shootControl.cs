@@ -41,7 +41,7 @@ public class shootControl : MonoBehaviour
         
 
         RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, enemy))
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
                 
                 var bullet = Instantiate(bulletPrefab, namlu.position, namlu.rotation);

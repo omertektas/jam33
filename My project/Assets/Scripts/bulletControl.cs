@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class bulletControl : MonoBehaviour
 {
-    [SerializeField] private static int health;
+    [SerializeField] private static  int health=100;
     void Start()
     {
         Destroy(gameObject,2f);
@@ -21,7 +21,12 @@ public class bulletControl : MonoBehaviour
         {
             health -= 10;
             Debug.Log(health);
-            Destroy(gameObject);
+            
+            if (health <= 0)
+            {
+                health = 100;//buraya bak
+                Destroy(other.gameObject);
+            }
         }
     }
 }

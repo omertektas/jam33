@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class characterControl : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float jumpSpeed;
+    [SerializeField] GameObject damagePanel;
+    [SerializeField] private float moveSpeed;  
+    [SerializeField] private static float health=100;
+    
     Rigidbody rb;
     bool isGrounded;
     Animator anim;
@@ -18,9 +20,9 @@ public class characterControl : MonoBehaviour
 
     
     void Update()
-    {
-        jumpFunc();
+    {      
         moveFunc();
+        
     }
 
     
@@ -38,31 +40,29 @@ public class characterControl : MonoBehaviour
 
     }
 
-    private void jumpFunc()
-    {
-       
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            rb.AddForce(transform.up * jumpSpeed);
-            isGrounded=false;
-        }
-       
-        
-        
-    }
+    
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag=="ground")
+        if (collision.gameObject.tag=="trap" )
         {
-            isGrounded=true;
+            StartCoroutine(damage());
         }
+
+        
         
 
 
     }
 
-    
+    IEnumerator damage()
+    {
+        damagePanel.SetActive(true);
+        yield return new WaitForSeconds(1);
+        damagePanel.SetActive(false);
+
+    }
+
+
 
 
 

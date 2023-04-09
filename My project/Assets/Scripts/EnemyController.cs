@@ -7,10 +7,14 @@ public class EnemyController : MonoBehaviour
 {
     public Transform player;
     UnityEngine.AI.NavMeshAgent enemy;
-    [SerializeField] private static int health;
+    
+    AudioSource enemyAudioSource;
     void Start()
     {
         enemy = GetComponent<NavMeshAgent>();
+        enemyAudioSource = GetComponent<AudioSource>();  
+        enemyAudioSource.Pause();
+        
     }
 
     // Update is called once per frame
@@ -18,20 +22,22 @@ public class EnemyController : MonoBehaviour
     {
         GoPlayer();
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            health -= 10;
-            Debug.Log(health);
-        }
-    }
+   
     void GoPlayer()
     {
         if (Vector3.Distance(player.position, this.gameObject.transform.position) < 30)
         {
             enemy.SetDestination(player.position);
         }
-      
+        if (Vector3.Distance(player.position, this.gameObject.transform.position) < 8)
+        {
+            enemyAudioSource.UnPause();
+        }
+        else
+        {
+            enemyAudioSource.Pause();
+           
+        }
+
     }
 }
