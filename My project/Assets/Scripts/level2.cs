@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class level2 : MonoBehaviour
 {
+    
     [SerializeField] private GameObject enemy1;
     [SerializeField] private GameObject enemy2;
     [SerializeField] private GameObject enemy3;
@@ -15,6 +16,7 @@ public class level2 : MonoBehaviour
     void Start()
     {
         finalSource = GetComponent<AudioSource>();
+        
        
     }
 
@@ -26,6 +28,7 @@ public class level2 : MonoBehaviour
             finalSource.enabled = true;
             Invoke("videoFinal",10);
         }
+        
     }
 
     private void videoFinal()
